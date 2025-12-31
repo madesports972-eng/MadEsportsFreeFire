@@ -10,9 +10,30 @@
   a {text-decoration:none;color:inherit;}
 
   /* Header */
-  header {text-align:center; padding:20px; background:#020617; position:sticky; top:0; z-index:100;}
-  header img {width:500px; height:300px; border-radius:50%; display:block; margin:0 auto;}
-  header h1 {color:#3b82f6; margin-top:10px; font-size:28px;}
+  header {
+    text-align:center;
+    padding:0;
+    background:#020617;
+    position:sticky;
+    top:0;
+    z-index:100;
+  }
+
+  /* Banner Size */
+  header img {
+    width:100%;
+    max-width:1080px;
+    height:auto;
+    border-radius:0;
+    display:block;
+    margin:0 auto;
+  }
+
+  header h1 {
+    color:#3b82f6;
+    margin:10px 0;
+    font-size:28px;
+  }
 
   /* Slider */
   .slider {position:relative; max-width:800px; margin:20px auto; border-radius:10px; overflow:hidden;}
@@ -52,6 +73,7 @@
     .games {flex-direction:column; align-items:center;}
     .card {width:90%;}
     .slider {width:95%;}
+    header h1 {font-size:24px;}
   }
 </style>
 </head>
@@ -59,7 +81,7 @@
 
 <!-- Header -->
 <header>
-  <img src="/MadEsports Banner.jpeg" alt="MadEsports Logo">
+  <img src="/MadEsports Banner.jpeg" alt="MadEsports Banner">
   <h1>MadEsports</h1>
 </header>
 

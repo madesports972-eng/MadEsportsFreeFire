@@ -6,7 +6,7 @@
 <title>MadEsports</title>
 <style>
   * {margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-  body {background:#050b1e;color:white;}
+  body {background:#050b1e;color:#ffffff;padding-top:3px;}
   a {text-decoration:none;color:inherit;}
 
   /* Header */
@@ -14,9 +14,11 @@
     text-align:center;
     padding:0;
     background:#020617;
-    position:sticky;
+    position:static;
     top:0;
-    z-index:100;
+    left:0;
+    width:100%;
+    z-index:1000;
   }
 
   /* Banner Size */
@@ -29,40 +31,109 @@
     margin:0 auto;
   }
 
-  header h1 {
-    color:#3b82f6;
-    margin:10px 0;
-    font-size:28px;
-  }
+  /* BLUE + WHITE THEME */
+   h2, .card h3, .rules h2 {color:#3b82f6;}
+  .card span, .content p, .rules ul, .rules li {color:#dcecff;}
 
   /* Slider */
   .slider {position:relative; max-width:800px; margin:20px auto; border-radius:10px; overflow:hidden;}
   .slides {display:flex; transition:0.5s;}
   .slides img {width:100%; cursor:pointer;}
-  
+
   /* Games Section */
   .games {display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:30px 10px;}
-  .card {background:#020617; padding:20px; width:200px; border-radius:10px; text-align:center; box-shadow:0 0 15px #2563eb; cursor:pointer; transition:transform 0.3s;}
+  .card {
+    background:#020617; 
+    padding:20px; 
+    width:200px; 
+    border-radius:30px; 
+    text-align:center; 
+    box-shadow:0 0 15px #3b82f6;
+    cursor:pointer; 
+    transition:transform 0.3s;
+    border:1px solid #3b82f6;
+  }
   .card:hover {transform:scale(1.05);}
   .card h3 {color:#3b82f6;margin-bottom:10px;}
-  .card span {color:#93c5fd;font-weight:500;}
+  .card h4 {color:#3b82f6;margin-bottom:10px;}
 
-  /* Collapsible Section */
-  .collapsible {background:#020617; color:white; cursor:pointer; padding:15px; width:90%; max-width:600px; margin:10px auto; border-radius:10px; border:1px solid #3b82f6;}
+  /*  This makes each span appear in a new line */
+  .card span {
+    color:#93c5fd;
+    font-weight:10;
+    display:block;      /* NEW LINE */
+    margin-bottom:6px;  /* Optional spacing between lines */
+  }
+
+  /* Collapsible Section CENTER ALIGN */
+  .collapsible {
+    background:#020617;
+    color:white;
+    cursor:pointer;
+    padding:15px;
+    width:100%;
+    max-width:600px;
+    margin:15px auto;
+    border-radius:50px;
+    border:1px solid #3b82f6;
+    text-align:center;
+  }
   .collapsible:after {content:'+'; float:right;}
   .active:after {content:'-';}
-  .content {padding:0 15px; max-height:0; overflow:hidden; transition:max-height 0.3s ease-out; background:#0f172a; border-radius:0 0 10px 10px; margin-bottom:10px;}
-  .content p {padding:10px 0; color:#cbd5f5;}
+  .content {
+    padding:0 15px;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.3s ease-out;
+    background:#0f172a;
+    border-radius:0 0 10px 10px;
+    margin:0 auto 10px auto;
+    width:90%;
+    max-width:600px;
+  }
+  .content p {padding:10px 0;}
 
-  /* Rules Section */
-  .rules {padding:40px 20px; max-width:800px; margin:auto;}
-  .rules h2 {text-align:center; color:#3b82f6; margin-bottom:20px;}
-  .rules ul {list-style:disc; margin-left:20px; color:#cbd5f5;}
-  .rules li {margin-bottom:8px;}
+/* ===== RULES SECTION ===== */
+.rules {
+  padding:45px 20px;
+  max-width:600px;
+  margin:auto;
+  text-align:left;
+}
 
-  /* Social Icons */
-  .socials {display:flex; justify-content:center; gap:20px; padding:20px;}
-  .socials a img {width:40px;height:40px; transition:transform 0.3s;}
+.rules h2 {
+  font-size:25px;     /* Bigger heading */
+  margin-top: 30px;      /* Space before heading */
+  margin-bottom:18px; /* Extra gap before bullet list */
+}
+
+.rules h1 {
+  font-size:25px;     /* Bigger heading */
+  margin-top:5px;      /* Space before heading */
+  margin-bottom:5px; /* Extra gap before bullet list */
+}
+
+
+.rules ul {
+  list-style:disc;
+  margin-left:35px;
+  line-height:1.5;    /* Better spacing between bullet points */
+  font-size:18px;     /* Slightly bigger text */
+}
+
+  /* Social Icons BLUE & WHITE */
+  .socials {
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:5px;
+  }
+  .socials a img {
+    width:25px;
+    height:25px;
+    transition:transform 0.3s;
+    filter:drop-shadow(0 0 8px #3b82f6);
+  }
   .socials a img:hover {transform:scale(1.2);}
 
   /* Footer */
@@ -82,16 +153,15 @@
 <!-- Header -->
 <header>
   <img src="/MadEsports Banner.jpeg" alt="MadEsports Banner">
-  <h1>MadEsports</h1>
+ 
 </header>
 
 <!-- Image Slider -->
 <div class="slider">
   <div class="slides">
-    <img src="/Name Mad Esports Logo.png" onclick="window.location.href='#'">
-    <img src="/Pain.jpg" onclick="window.location.href='#'">
-    <img src="/Madara Uchiha.jpg" onclick="window.location.href='#'">
-    <img src="/MadEsports Banner.jpeg" onclick="window.location.href='#'">  
+    <img src="/FF1.jpg" onclick="window.location.href='#'">
+    <img src="/FF2.jpg" onclick="window.location.href='#'">
+    <img src="/FF3.jpg" onclick="window.location.href='#'">
   </div>
 </div>
 
@@ -99,68 +169,91 @@
 <section class="games">
   <div class="card" onclick="window.location.href='#'">
     <h3>Free Fire</h3>
-    <span>Prize Pool: ₹5,000</span>
+    <h4>Coming Soon</h4>
+    <span>Entry Fee: ₹ 100 </span>
+    <span>Prize Pool: ₹ 800</span>
   </div>
   <div class="card" onclick="window.location.href='#'">
     <h3>BGMI</h3>
-    <span>Prize Pool: ₹10,000</span>
-  </div>
+    <h4>Coming Soon</h4>
+    <span>Entry Fee: ₹ --- </span>
+    <span>Prize Pool: ₹ ---</span>
+    </div>
 </section>
 
-<!-- Players/Teams Collapsible -->
-<button class="collapsible">Team Alpha</button>
+<!-- Collapsible -->
+<button class="collapsible">Register Team Name </button>
 <div class="content">
-  <p>Player1, Player2, Player3</p>
+  <p>----</p>
+  <p>----</p>
+  <p>----</p>
 </div>
-<button class="collapsible">Team Beta</button>
+
+<button class="collapsible">Top Best Team</button>
 <div class="content">
-  <p>PlayerA, PlayerB, PlayerC</p>
+  <p>----</p>
+  <p>----</p>
+  <p>----</p>
+  <p>----</p>
+
 </div>
 
 <!-- Top Players Collapsible -->
 <button class="collapsible">Top Players - Total Kills</button>
 <div class="content">
-  <p>PlayerX: 50 Kills</p>
-  <p>PlayerY: 45 Kills</p>
-  <p>PlayerZ: 40 Kills</p>
+  <p>-----: 50 Kills</p>
+  <p>-----: 45 Kills</p>
+  <p>-----: 40 Kills</p>
 </div>
 
-<!-- Rules & Maps Section -->
+<!-- Rules -->
 <section class="rules">
   <h2>Rules & Guidelines</h2>
   <ul>
-    <li>Follow fair play rules.</li>
-    <li>No cheating or hacking allowed.</li>
-    <li>Submit match screenshots as proof.</li>
-    <li>Respect all players and organizers.</li>
+    <li>Players must follow fair play and sportsmanship at all times.</li>
+    <li>Cheating, hacking, or using third-party scripts is strictly prohibited.</li>
+    <li>All matches must be played on the official Free Fire servers.</li>
+    <li>Screenshots or video proof of matches may be requested for verification.</li>
+    <li>Players must join the tournament lobby before the match starts.</li>
+    <li>No team switching or changing player names during the tournament.</li>
+    <li>Disrespectful behavior towards other players or organizers will result in disqualification.</li>
+    <li>Any technical issues must be reported immediately to the tournament admins.</li>
+    <li>Decisions by the tournament admins are final.</li>
   </ul>
+
   <h2>Maps & Tournament Details</h2>
   <ul>
-    <li>Map1: Bermuda</li>
-    <li>Map2: Kalahari</li>
-    <li>Map3: Pochinki</li>
+    <!--<h1>Free Fire</h2>-->
+    <li>Map 1: Bermuda</li>
+    <li>Map 2: Kalahari</li>
+    <li>Map 3: Purgatory</li>
+    <li>Map 4: Eclipse</li>
+  </ul>
+  <h2>Winner's Team Extra Gift</h2>
+  <ul>
+    <li>Winners Team Gets Free Slots In Next Big Tournament</li>
+    <li>E certificate</li>
+    
   </ul>
 </section>
 
-<!-- Social Icons -->
+<!-- Socials -->
 <div class="socials">
-  <a href="#"><img src="" alt="Instagram"></a>
-  <a href="#"><img src="https://via.placeholder.com/40/ff0000/ffffff?text=Y" alt="YouTube"></a>
-  <a href="#"><img src="https://via.placeholder.com/40/7289da/ffffff?text=D" alt="Discord"></a>
-  <a href="#"><img src="https://via.placeholder.com/40/25D366/ffffff?text=W" alt="WhatsApp"></a>
+  <a href="https://www.instagram.com/mad_esports3?igsh=MWFhMWFtZDdmdW5wdA=="><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"></a>
+  <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733590.png" alt="YouTube"></a>
+  <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" alt="Discord"></a>
+  <a href="https://chat.whatsapp.com/GmjGYRAJQwh70Cic5HSFXV"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
 </div>
 
 <!-- Footer -->
-<footer>
-  <p>© 2025 MadEsports. All Rights Reserved</p>
-</footer>
+<footer><p>© 2025 Maddox. All Rights Reserved</p></footer>
 
 <script>
   // Slider JS
   let index = 0;
   const slides = document.querySelectorAll('.slides img');
   function showSlide() {
-    slides.forEach((slide,i)=>{slide.style.display='none';});
+    slides.forEach((slide)=> slide.style.display='none');
     slides[index].style.display='block';
     index = (index+1)%slides.length;
   }
@@ -173,11 +266,7 @@
     btn.addEventListener('click',()=>{
       btn.classList.toggle('active');
       const content = btn.nextElementSibling;
-      if(content.style.maxHeight){
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
+      content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
     });
   });
 </script>

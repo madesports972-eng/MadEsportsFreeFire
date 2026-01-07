@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MadEsports</title>
+<title>Mad Esports</title>
 <style>
   * {margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
   body {background:#050b1e;color:#ffffff;padding-top:2px;}
@@ -24,7 +24,7 @@
   /* Banner Size */
   header img {
     width:100%;
-    max-width:1080px;
+    max-width:2000px;
     height:auto;
     border-radius:0;
     display:block;
@@ -36,31 +36,51 @@
   .card span, .content p, .rules ul, .rules li {color:#dcecff;}
 
   /* Slider */
-  .slider {position:relative; max-width:800px; margin:20px auto; border-radius:10px; overflow:hidden;}
-  .slides {display:flex; transition:0.5s;}
-  .slides img {width:100%; cursor:pointer;}
+.slider {
+  position: relative;
+  max-width:1400px;
+  margin:10px auto;
+  border-radius:25px;
+  overflow:hidden;
+  height:250px; /* fixed height */
+}
+.slides img {
+  position:absolute;
+  top:0; left:0;
+  width:115%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition: opacity 1s ease-in-out;
+}
+.slides img.active {
+  opacity:1;
+}
 
   /* Games Section */
-  .games {display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:30px 10px;}
+  .games {display:flex; flex-wrap:wrap; justify-content:center; gap:25px; padding:40px 15px;}
   .card {
     background:#020617; 
-    padding:20px; 
-    width:200px; 
-    border-radius:30px; 
+    padding:22px; 
+    width:260px;
+    border-radius:26px; 
     text-align:center; 
-    box-shadow:0 0 15px #3b82f6;
+    box-shadow:0 0 6px rgba(59,130,246,.35);
     cursor:pointer; 
-    transition:transform 0.3s;
+    transition:transform .3s,box-shadow .3s;
     border:1px solid #3b82f6;
   }
-  .card:hover {transform:scale(1.05);}
-  .card h3 {color:#3b82f6;margin-bottom:10px;}
+  .card:hover{
+    transform:scale(1.06);
+    box-shadow:0 0 18px rgba(59,130,246,.85);
+  }
+  .card h3 {color:#3b82f6;display:block; margin-bottom:10px;}
   .card h4 {color:#3b82f6;margin-bottom:10px;}
 
   /*  This makes each span appear in a new line */
   .card span {
     color:#93c5fd;
-    font-weight:10;
+    font-weight:400;
     display:block;      /* NEW LINE */
     margin-bottom:6px;  /* Optional spacing between lines */
   }
@@ -76,12 +96,12 @@
     margin:15px auto;
     border-radius:50px;
     border:1px solid #3b82f6;
-    text-align:auto;
+    text-align:center;
   }
-  .collapsible:after {content:'+'; float:right;}
-  .active:after {content:'-';}
+.collapsible:after {content: "⇩";float: right;}
+.collapsible.active:after {content: "⇧";}
   .content {
-    padding:0 15px;
+    padding:0 30px;
     max-height:0;
     overflow:hidden;
     transition:max-height 0.3s ease-out;
@@ -142,8 +162,8 @@
     right: 20px;
     bottom: 100px;
 
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
 
     border-radius: 90%;
     background: rgba(59, 130, 246, 0.25);
@@ -191,14 +211,53 @@ footer {
     header h1 {font-size:24px;}
   }
 
+/* ===== Desktop View Improvements ONLY ===== */
+  .container {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+  }
+
+  /* Header image breathing space */
+  header img {
+    max-width: 2000px;
+  }
+
+  /* Slider bigger on desktop */
+  .slider {
+    max-width: 1400px;
+  }
+  /* Games cards scale better */
+  .games {
+    max-width: 1200px;
+  }
+
+  .card {
+    width: 260px;   /* bigger cards for desktop */
+  }
+
+  /* Rules section wider */
+  .rules {
+    max-width: 1500px;
+    font-size: 18px;
+  }
+
+  /* Collapsible content wider */
+  .collapsible,
+  .content {
+    max-width: 1500px;
+  }
+
+
 
 </style>
 </head>
 <body>
+<main class="container">
 
 <!-- Header -->
 <header>
-  <img src="/MadEsports Banner.jpeg" alt="MadEsports Banner">
+  <img src="/MadEsports_Banner.jpeg" alt="Mad Esports Banner">
  
 </header>
 
@@ -213,7 +272,7 @@ footer {
 
 <!-- Games Section -->
 <section class="games">
-  <div class="card" onclick="window.location.href='#'">
+  <div class="card" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdhuGh-ANdNbO5WOhW_cUSeIGHao4rGNLvAuqEBwNwdaSt85A/viewform?usp=header'">
     <h3>Free Fire</h3>
     <h4>Coming Soon</h4>
     <span>Entry Fee: ₹ 100 </span>
@@ -228,7 +287,7 @@ footer {
 </section>
 
 <!-- Collapsible -->
-<button class="collapsible">Register Team Name Group A </button>
+<button class="collapsible">Registered Team Names – Group A </button>
 <div class="content">
   <p>1.------</p>
   <p>2.------</p>
@@ -244,7 +303,7 @@ footer {
   <p>12.------</p>
 </div>
 
-<button class="collapsible">Register Team Name Group B</button>
+<button class="collapsible">Registered Team Names – Group B</button>
 <div class="content">
   <p>1.------</p>
   <p>2.------</p>
@@ -260,7 +319,7 @@ footer {
   <p>12.------</p>
 </div>
 
-<button class="collapsible">Top Best Team</button>
+<button class="collapsible">Top Teams</button>
 <div class="content">
   <p>1.------🥳</p>
   <p>2.------🥳</p>
@@ -270,7 +329,7 @@ footer {
 </div>
 
 <!-- Top Players Collapsible -->
-<button class="collapsible">Top Players - Total Kills</button>
+<button class="collapsible">Top Players – Total Kills</button>
 <div class="content">
   <p>1.-------: 00 Kills😈</p>
   <p>2.-------: 00 Kills😎</p>
@@ -285,10 +344,10 @@ footer {
   <ul>
     <li>Players must follow fair play and sportsmanship at all times.</li>
     <li>Cheating, hacking, or using third-party scripts is strictly prohibited.</li>
-    <li>All matches must be played on the official Free Fire servers.</li>
-    <li>Screenshots or video proof of matches may be requested for verification.</li>
+    <li>Screenshots or video proof of matches may be requested for verification if any suspicious activity is found.</li>
     <li>Players must join the tournament lobby before the match starts.</li>
-    <li>No team switching or changing player names during the tournament.</li>
+    <li>Only registered players will be allowed to play tournament matches.</li>
+    <li>Any technical issue from the player's side will not be the responsibility of the organizers.</li>
     <li>Disrespectful behavior towards other players or organizers will result in disqualification.</li>
     <li>Any technical issues must be reported immediately to the tournament admins.</li>
     <li>Decisions by the tournament admins are final.</li>
@@ -300,12 +359,11 @@ footer {
     <li>Map 1: Bermuda</li>
     <li>Map 2: Kalahari</li>
     <li>Map 3: Purgatory</li>
-    <li>Map 4: Eclipse</li>
   </ul>
-  <h2>Winner's Team Extra Gift</h2>
+  <h2>Winning Team – Extra Gifts</h2>
   <ul>
-    <li>Winners Team Gets Free Slots In Next Big Tournament</li>
-    <li>E certificate</li>
+    <li>Winning team gets free slots in the next big tournament</li>
+    <li>E-certificate</li>
     
   </ul>
 </section>
@@ -314,28 +372,28 @@ footer {
 <div class="socials">
   <a href="https://www.instagram.com/mad_esports3?igsh=MWFhMWFtZDdmdW5wdA=="target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"></a>
   <a href="http://www.youtube.com/@MadEsports-972"target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733590.png" alt="YouTube"></a>
-<!--  <a href=""target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" alt="Discord"></a>-->
+ <!-- <a href=""target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" alt="Discord"></a>-->
   <a href="https://chat.whatsapp.com/GmjGYRAJQwh70Cic5HSFXV"target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
   <a href="mailto:madesports972@gmail.com"target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png" alt="Gmail"></a>
   </div>
 
 <!-- Footer -->
-<footer><p>© 2025 Maddox. All Rights Reserved</p></footer>
+<footer><p>© 2025 Mad Esports. All Rights Reserved</p></footer>
 
 <!-- Scroll Button (MUST be last) -->
 <button class="scroll-btn" id="scrollBtn">v</button>
 
 <script>
-  // Slider JS
-  let index = 0;
-  const slides = document.querySelectorAll('.slides img');
-  function showSlide() {
-    slides.forEach((slide)=> slide.style.display='none');
-    slides[index].style.display='block';
-    index = (index+1)%slides.length;
-  }
-  showSlide();
-  setInterval(showSlide,5000);
+/* ===== SLIDER ===== */
+let slideIndex=0;
+const slideImgs=document.querySelectorAll(".slides img");
+slideImgs[0].classList.add("active"); // ensure first image is visible
+
+setInterval(()=>{
+  slideImgs.forEach(i=>i.classList.remove("active"));
+  slideIndex=(slideIndex+1)%slideImgs.length;
+  slideImgs[slideIndex].classList.add("active");
+},5000);
 
   // Collapsible JS
   const collapsibles = document.querySelectorAll('.collapsible');
